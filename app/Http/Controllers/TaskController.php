@@ -81,4 +81,11 @@ class TaskController extends Controller
 
         return redirect('/tasks');
     }
+
+    public function edit(Request $request , Task $task){
+        $task -> description = $request['description'];
+        $task -> update();
+        return redirect('/tasks');
+
+    }
 }

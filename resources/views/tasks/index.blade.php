@@ -59,15 +59,25 @@
                             </thead>
                             <tbody>
                                 @foreach ($tasks as $task)
+				<form action="{{url('tasks/edit/' . $task->id)}}" method="POST">
+ 				{{ csrf_field() }}
+                                {{ method_field('POST') }}
                                     <tr>
                                         <td class="table-text"><div>{{ $task->name }}</div></td>
-					<td class="table-text"><div>{{ $task->description }}</div></td>
+					<td><input type="text" name="description" id="task-description" class="form-control" value="{{ $task->description }}"></td>
 				    </tr>
 				    <tr>
-
-                                        <!-- Task Delete Button -->
                                         <td>
-                                            <form action="{{url('task/' . $task->id)}}" method="POST">
+                                            <button type="submit" id="edit-description-{{ $task->id }}" class="btn btn-warning">
+                                                <i class="fa fa-btn fa-edit"></i>Change Description
+                                            </button>
+                                        </td>
+				    </tr>
+                                </form>
+					<tr>
+						<td>
+                                        <!-- Task Delete Button -->
+						<form action="{{url('task/' . $task->id)}}" method="POST">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
 
@@ -75,8 +85,8 @@
                                                     <i class="fa fa-btn fa-trash"></i>Delete
                                                 </button>
                                             </form>
-                                        </td>
-                                    </tr>
+						</td>
+					</tr>
                                 @endforeach
                             </tbody>
                         </table>
