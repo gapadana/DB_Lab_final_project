@@ -21,7 +21,14 @@
                             <label for="task-name" class="col-sm-3 control-label">Task</label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
+                                <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task-name') }}">
+                            </div>
+                        </div>
+			<div class="form-group">
+                            <label for="task-name" class="col-sm-3 control-label">Description</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" name="description" id="task-description" class="form-control" value="{{ old('task-description') }}">
                             </div>
                         </div>
 
@@ -54,6 +61,9 @@
                                 @foreach ($tasks as $task)
                                     <tr>
                                         <td class="table-text"><div>{{ $task->name }}</div></td>
+					<td class="table-text"><div>{{ $task->description }}</div></td>
+				    </tr>
+				    <tr>
 
                                         <!-- Task Delete Button -->
                                         <td>

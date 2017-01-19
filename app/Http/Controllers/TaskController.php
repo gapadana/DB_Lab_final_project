@@ -59,6 +59,8 @@ class TaskController extends Controller
 
         $request->user()->tasks()->create([
             'name' => $request->name,
+	    'description' => $request->description,
+	    'state' => "todo"
         ]);
 
         return redirect('/tasks');
