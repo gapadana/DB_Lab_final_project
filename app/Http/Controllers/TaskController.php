@@ -88,4 +88,23 @@ class TaskController extends Controller
         return redirect('/tasks');
 
     }
+
+public function todo(Request $request , Task $task){
+        $task -> state = "todo";
+        $task -> update();
+        return redirect('/tasks');
+
+    }
+public function done(Request $request , Task $task){
+        $task -> state = "done";
+        $task -> update();
+        return redirect('/tasks');
+
+    }
+public function doing(Request $request , Task $task){
+        $task -> state = "doing";
+        $task -> update();
+        return redirect('/tasks');
+
+    }
 }

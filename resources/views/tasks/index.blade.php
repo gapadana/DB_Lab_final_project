@@ -86,6 +86,14 @@
                                                     <i class="fa fa-btn fa-trash"></i>Delete
                                                 </button>
                                             </form>
+ 					<!-- DOING Button -->
+						<form action="{{url('task/doing/' . $task->id)}}" method="POST">
+                                                {{ csrf_field() }}
+
+                                                <button type="submit" id="doing-task-{{ $task->id }}" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-edit"></i>Doing
+                                                </button>
+                                            </form>
 						</td>
 					</tr>
 				@endif
@@ -129,6 +137,22 @@
                                                     <i class="fa fa-btn fa-trash"></i>Delete
                                                 </button>
                                             </form>
+						<!-- TO DO Button -->
+						<form action="{{url('task/todo/' . $task->id)}}" method="POST">
+                                                {{ csrf_field() }}
+
+                                                <button type="submit" id="todo-task-{{ $task->id }}" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-edit"></i>TO-DO
+                                                </button>
+                                            </form>
+						<!-- DONE Button -->
+						<form action="{{url('task/done/' . $task->id)}}" method="POST">
+                                                {{ csrf_field() }}
+
+                                                <button type="submit" id="done-task-{{ $task->id }}" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-edit"></i>Done
+                                                </button>
+                                            </form>
 						</td>
 					</tr>
 				@endif
@@ -170,6 +194,22 @@
 
                                                 <button type="submit" id="delete-task-{{ $task->id }}" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-trash"></i>Delete
+                                                </button>
+                                            </form>
+						<!-- TO DO Button -->
+						<form action="{{url('task/todo/' . $task->id)}}" method="POST">
+                                                {{ csrf_field() }}
+
+                                                <button type="submit" id="todo-task-{{ $task->id }}" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-edit"></i>TO-DO
+                                                </button>
+                                            </form>
+						<!-- DOING Button -->
+						<form action="{{url('task/doing/' . $task->id)}}" method="POST">
+                                                {{ csrf_field() }}
+
+                                                <button type="submit" id="doing-task-{{ $task->id }}" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-edit"></i>Doing
                                                 </button>
                                             </form>
 						</td>
